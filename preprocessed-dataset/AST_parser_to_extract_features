@@ -1,0 +1,44 @@
+Input : Ballerina Source code
+Output : Feature array
+Algorithm :
+Start parsing;
+while End program do
+    Traverse node;
+    if Right arrow found then
+        if Left operand is Kind(Database call) then
+            while Backtrack do
+                if Loop start found then
+                    Update feature array (Database call inside loop + 1);
+                    Stop backtracking and continue parsing;
+                else
+                    Update feature array (Direct Database call + 1);
+                    Continue parsing;
+                end
+            end
+        else
+        end
+        if Left operand is Kind(HTTP call) then
+            while Backtrack do
+                if Loop start found then
+                    Update feature array (HTTP call inside loop + 1);
+                    Stop backtracking and continue parsing;
+                else
+                    Update feature array (Direct HTTP call + 1);
+                    Continue parsing;
+                end
+            end
+        else
+        end
+        if Left operand is Kind(gRPC-non-blocking call) then
+            while Backtrack do
+                if Loop start found then
+                    Update feature array (gRPC call inside loop + 1);
+                    Stop backtracking and continue parsing;
+                else
+                    Update feature array (Direct gRPC call + 1);
+                    Continue parsing;
+                end
+            end
+        else
+    else
+end
